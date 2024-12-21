@@ -70,7 +70,8 @@ def cpp_agent(observation):
     if agent_process is None:
         src_file_path = inspect.getfile(lambda: None)  # the path to this main.py file. https://stackoverflow.com/a/53293924
         cwd = os.path.split(src_file_path)[0]
-        agent_process = Popen(["./my_chess_bot.out"], stdin=PIPE, stdout=PIPE, stderr=PIPE, cwd=cwd)
+        # agent_process = Popen(["./custom_bot.out"], stdin=PIPE, stdout=PIPE, stderr=PIPE, cwd=cwd)
+        agent_process = Popen(["./custom_bot.out"], stdin=PIPE, stdout=PIPE, stderr=PIPE)
         my_agent_process = agent_process
         atexit.register(cleanup_process)
 
